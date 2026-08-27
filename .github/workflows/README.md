@@ -5,6 +5,9 @@ All third-party actions are pinned to immutable commit SHAs.
 - `ci.yml` runs generated-code drift checks, formatting, vet, standard and
   full-tag tests, the race detector, frozen-Oracle compatibility checks, and
   all three host-adapter suites.
+- `codeql.yml` runs Go CodeQL analysis on pull requests, pushes to `main`, a
+  weekly schedule, and manual dispatch. Pull request runs check out the exact
+  submitted head commit before the explicit Go build.
 - `provider-smoke.yml` is a manually dispatched, credentialed smoke test. It
   makes at most one generation request and one embedding request and never
   prints model input, model output, or credentials.
